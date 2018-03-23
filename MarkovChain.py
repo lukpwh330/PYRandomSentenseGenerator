@@ -10,7 +10,7 @@ def initializeWordList():
 	# generate word list from the passage
 	punctuations = string.punctuation.translate(str.maketrans('', '', ",./'")) + "/" # define unwanted punctuations
 	passage = passage.translate(str.maketrans(punctuations, ' ' * len(punctuations))) # remove punctuations from passage text
-	words = passage.replace(",", " , ").replace(".", " . ").split(" ") # get list of word from the passage
+	words = passage.replace(",", ", ").replace(".", ". ").split(" ") # get list of word from the passage
 	
 	# clean up the word list
 	words = [word.strip("'") for word in words]
@@ -47,14 +47,14 @@ def randomSentence(wordDict, minWords, maxWords): # minimum/maximum number of wo
 		
 		# get random words from the dictionary when the chain ends
 		if key not in wordDict:
-			while word2 in ",." and i == 0: # first word is not a puntuation
+			while not word1.endswith('.') and i == 0: # first word is after a period
 				key = random.choice(list(wordDict.keys())) # get random key			
 				word1, word2, = key.split(" ") # get first and second word from the key
 		
-		if i > 0 and word2 not in ",.":
+		if i > 0:
 			result += " " # add space after each word in result string
 		
-		result += word2.capitalize() if word1 == "." else word2  # add word to string and capitalize the word after a period
+		result += word2.capitalize() if word1.endswith('.') or i == 0 else word2  # add word to string and capitalize the word after a period
 		
 		word1, word2 = word2, random.choice(wordDict[key]) # move to the next state of the markov chain
 	
@@ -63,4 +63,3 @@ def randomSentence(wordDict, minWords, maxWords): # minimum/maximum number of wo
 chain = initializeWordList(); # dictionary for storing markov chain
 
 print(randomSentence(chain, 900, 1000)) # generate a random sentences with length 900 to 1000
-	
