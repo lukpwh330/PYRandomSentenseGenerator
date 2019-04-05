@@ -51,7 +51,7 @@ def randomSentence(wordDict, minWords, maxWords): # Minimum/maximum number of wo
 
 		# Get random words from the dictionary when the chain ends
 		if key not in wordDict:
-			while not word1.endswith('.') and i == 0: # First word is after a period
+			while not word1.endswith('.') or word2.endswith('.') and i == 0: # First word is after a period
 				key = random.choice(list(wordDict.keys())) # Get random key
 				word1, word2, word3 = key.split(" ") # Get first and second word from the key
 
