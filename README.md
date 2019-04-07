@@ -52,7 +52,7 @@ markov_chain.predict(100, 200)
 ```
 
 ## The `ExampleData` Class
-The `ExampleData` class provides example data for the `MChain` class. This class takes the argument of the filename. When pyarkovchain is installed, it comes with sample "training data". The name of this data must be provided. You may put your own data into the `pyarkovchain/example_data` folder and references the data shoudl be saved into a `.txt` file. To reference take of the `.txt` extension. For example, if you have a file `hello_world.txt`, just provide `"hello_world"`. Look [here](https://github.com/MonliH/pyarkovchain/blob/master/README.md#list-of-example-passagesdata) for all the avaiable passages/text examples.
+The `ExampleData` class provides example data for the `MChain` class. This class takes the argument of the filename. When pyarkovchain is installed, it comes with sample "training data". The name of this data must be provided. You may put your own data into the `pyarkovchain/example_data` folder and references the data shoudl be saved into a `.txt` file. To reference take of the `.txt` extension. For example, if you have a file `hello_world.txt`, just provide `"hello_world"`. Look [here](https://github.com/MonliH/pyarkovchain#list-of-example-passagesdata) for all the avaiable passages/text examples.
 
 ``` python
 import pyarkovchain as pc
