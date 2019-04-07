@@ -13,6 +13,7 @@ Here are some reasons:
 * Ease of use.
 * Only uses built in python modules.
 * Is still being actively worked on. (As of 2019)
+* Example data to play around with (e.g. Harry potter, The Hobbit)
 
 ## The `Mchain` Class
 `MChain` is the markov chain object n this module and should be used. The `MChain` class has an optional argument called `DEPTH`. This controls how much the markov chain "looks back". Higher values for the `DEPTH` argument means less broken english but more overfitting. The `MChain` class has two methods: `init` and `predict`. 
@@ -51,7 +52,7 @@ markov_chain.predict(100, 200)
 ```
 
 ## The `ExampleData` Class
-The `ExampleData` class provides example data for the `MChain` class. This class takes the argument of the filename. When pyarkovchain is installed, it comes with sample "training data". The name of this data must be provided.
+The `ExampleData` class provides example data for the `MChain` class. This class takes the argument of the filename. When pyarkovchain is installed, it comes with sample "training data". The name of this data must be provided. You may put your own data into the `pyarkovchain/example_data` folder and references the data shoudl be saved into a `.txt` file. To reference take of the `.txt` extension. For example, if you have a file `hello_world.txt`, just provide `"hello_world"`.
 
 ``` python
 import pyarkovchain as pc
@@ -78,7 +79,14 @@ print(data_class.get_raw_text())
 
 - [x] Have example passages (e.g. Harrry potter)
 
+- [x] Allow other files in the `pyarkovchain/example_data` folder.
+
 - [ ] Create savable models
 
 - [ ] Be able to combine models
 
+## List of example passages/data
+* The Bible - `bible`
+* Harry Potter Book 1 - `harry_potter_1`
+* The Hobbit - `hobbit`
+* Python code - `python_code`
