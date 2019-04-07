@@ -73,3 +73,12 @@ print(data_class.get_raw_text())
 # ...
 ```
 
+## TODO List
+- [x] Create variable lookahead rates (the `DEPTH` argument)
+
+- [x] Have example passages (e.g. Harrry potter)
+
+- [ ] Create savable models
+
+- [ ] Be able to combine models
+
