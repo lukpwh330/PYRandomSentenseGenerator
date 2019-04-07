@@ -16,16 +16,24 @@ depth_of_markov_chain = 3
 markov_chain = pc.markov_chain.MChain(DEPTH=depth_of_markov_chain)
 ```
 
-### The `init` Method in The `Mchain` Class
-The `init` method generates the frequency tables for the `predict` method to use. The `init` method takes data as the argument. The data given to this function should have no capital letters for best results and should be stripped of newlines. 
+### The `init` Method
+The `init` method generates the frequency tables for the `predict` method to use. The `init` method takes data as the argument. The data given to this function should have no capital letters for best results and should be stripped of newlines. The dat can just be in the form of a normal python string.
 
 ``` python
 import pyarkovchain as pc
-markov_chain = pc.markov_chain.MChain()
-markov_chain.init(some_data)
+some_data = """To be, or not to be: that is the question: 
+Whether ‘tis nobler in the mind to suffer
+The slings and arrows of outrageous fortune,
+Or to take arms against a sea of troubles,
+And by opposing end them?
+To die: to sleep;""" # Make raw text
+
+processed_data = some_data.replace("\n", " ").lower() # Get rid of newlines and make it all lowercase
+markov_chain = pc.markov_chain.MChain() # Make markov chain object
+markov_chain.init(processed_data)
 ```
 
-### The `predict` method in the `Mchain` class
+### The `predict` Method
 After the `init` method is called, the `predict` method can be used. The `predict` method takes 2 arguments: the start of the  range and the end of the range of how many words the output will be. For example, the arguments 100 and 200 tell the method that the amount of words will be randomly selected and in between the numbers 100 and 200.
 
 ``` python
@@ -42,3 +50,19 @@ The `ExampleData` class provides example data for the `MChain` class. This class
 import pyarkovchain as pc
 data_class = pc.example_data.ExampleData("harry_potter_1")  # get first book of Harry Potter
 ```
+
+### The `get_raw_text` Method
+The `get_raw_text` method returns the text. For example, you would call this method as an argument to the `init` method. This method takes not arguments. Note this method returns already preprocessed data (e.g. gets rid of newline and cases).
+
+``` python
+import pyarkovchain as pc
+data_class = pc.example_data.ExampleData("harry_potter_1")
+print(data_class.get_raw_text())
+
+# Returns
+# ...
+# "they don't know we're not allowed to use magic at home. 
+# i'm going to have a lot of fun with dudley this summer...."
+# ...
+```
+
