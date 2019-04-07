@@ -1,11 +1,18 @@
 # pyarkovchain
-Pyarkovchain is now a module for python 3. It has 2 main classes: `ExampleData` and `MChain`. `ExampleData` helps you acess pre-fetched data, and `MChain` is the real markov chain.
+Pyarkovchain is now a module for python 3. It has 2 main classes: `ExampleData` and `MChain`. `ExampleData` helps you acess pre-fetched data, and `MChain` is the real markov chain. [Here](https://en.wikipedia.org/wiki/Markov_chain) is how a markov chain works. 
 
 ``` python
 import pyarkovchain as pc
 data_class = pc.example_data.ExampleData(*args)
 markov_chain = pc.markov_chain.MChain(*args)
 ```
+
+## Why pyarkovchain? 
+Here are some reasons:
+
+* Ease of use.
+* Only uses built in python modules.
+* Is still being actively worked on. (As of 2019)
 
 ## The `Mchain` Class
 `MChain` is the markov chain object n this module and should be used. The `MChain` class has an optional argument called `DEPTH`. This controls how much the markov chain "looks back". Higher values for the `DEPTH` argument means less broken english but more overfitting. The `MChain` class has two methods: `init` and `predict`. 
