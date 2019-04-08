@@ -12,7 +12,6 @@ Here are some reasons:
 
 * Ease of use.
 * Only uses built in python modules.
-* Is still being actively worked on. (As of 2019)
 * Example data to play around with (e.g. Harry potter, The Hobbit)
 
 ## The `Mchain` Class
