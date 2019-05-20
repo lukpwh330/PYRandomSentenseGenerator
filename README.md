@@ -13,6 +13,7 @@ Here are some reasons:
 * Ease of use.
 * Only uses built in python modules.
 * Example data to play around with (e.g. Harry potter, The Hobbit)
+* Simplicity
 
 ## The `Mchain` Class
 `MChain` is the markov chain object n this module and should be used. The `MChain` class has an optional argument called `DEPTH`. This controls how much the markov chain "looks back". Higher values for the `DEPTH` argument means less broken english but more overfitting. The `MChain` class has two methods: `init` and `predict`. 
