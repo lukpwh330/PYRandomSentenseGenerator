@@ -1,5 +1,5 @@
 # pyarkovchain
-Pyarkovchain is now a module for python 3. It has 2 main classes: `ExampleData` and `MChain`. `ExampleData` helps you acess pre-fetched data, and `MChain` is the real markov chain. [Here](https://en.wikipedia.org/wiki/Markov_chain) is how a markov chain works. 
+Pyarkovchain is module for creating generic markov chains in python 3. It has 2 main classes: `ExampleData` and `MChain`. `ExampleData` helps you acess pre-fetched data, and `MChain` is the real markov chain. [Here](https://en.wikipedia.org/wiki/Markov_chain) is how a markov chain works. 
 
 ``` python
 import pyarkovchain as pc
@@ -16,7 +16,7 @@ Here are some reasons:
 * Simplicity
 
 ## The `Mchain` Class
-`MChain` is the markov chain object n this module and should be used. The `MChain` class has an optional argument called `DEPTH`. This controls how much the markov chain "looks back". Higher values for the `DEPTH` argument means less broken english but more overfitting. The `MChain` class has two methods: `init` and `predict`. 
+`MChain` is the markov chain object used to generate the markov chain object. The `MChain` class has an optional argument called `DEPTH`. This controls how much the markov chain "looks back". Higher values for the `DEPTH` argument means less broken english but more overfitting. The `MChain` class has two methods: `init` and `predict`. 
 
 ``` python
 import pyarkovchain as pc
@@ -25,7 +25,7 @@ markov_chain = pc.markov_chain.MChain(DEPTH=depth_of_markov_chain)
 ```
 
 ### The `init` Method
-The `init` method generates the frequency tables for the `predict` method to use. The `init` method takes data as the argument. The data given to this function should have no capital letters for best results and should be stripped of newlines. The dat can just be in the form of a normal python string.
+The `init` method generates the frequency tables for the `predict` method to use. The `init` method takes data as its only argument. The data given to this function should have no capital letters for best results and should be stripped of newlines. The data can just be in the form of a normal python string.
 
 ``` python
 import pyarkovchain as pc
@@ -42,7 +42,7 @@ markov_chain.init(processed_data)
 ```
 
 ### The `predict` Method
-After the `init` method is called, the `predict` method can be used. The `predict` method takes 2 arguments: the start of the  range and the end of the range of how many words the output will be. For example, the arguments 100 and 200 tell the method that the amount of words will be randomly selected and in between the numbers 100 and 200.
+After the `init` method is called, the `predict` method can be used. The `predict` method takes 2 arguments: the start of the range and the end of the range of how many words the output will be. For example, the arguments 100 and 200 tell the method that the amount of words will be randomly selected and in between the numbers 100 and 200.
 
 ``` python
 import pyarkovchain as pc
@@ -52,7 +52,7 @@ markov_chain.predict(100, 200)
 ```
 
 ## The `ExampleData` Class
-The `ExampleData` class provides example data for the `MChain` class. This class takes the argument of the filename. When pyarkovchain is installed, it comes with sample "training data". The name of this data must be provided. You may put your own data into the `pyarkovchain/example_data` folder and references the data shoudl be saved into a `.txt` file. To reference take of the `.txt` extension. For example, if you have a file `hello_world.txt`, just provide `"hello_world"`. Look [here](https://github.com/MonliH/pyarkovchain#list-of-example-passagesdata) for all the avaiable passages/text examples.
+The `ExampleData` class provides example data for the `MChain` class. This class takes the name of the example passage/book as its first argument. When pyarkovchain is installed, it comes with sample "training data". The name of this data must be provided. You may put your own data into the `pyarkovchain/example_data` folder. The data should be saved into a `.txt`. If you have a file `hello_world.txt`, just provide `"hello_world"` as the first argument. Look [here](https://github.com/MonliH/pyarkovchain#list-of-example-passagesdata) for all the avaiable passages/text examples built-in.
 
 ``` python
 import pyarkovchain as pc
