@@ -1,4 +1,6 @@
 # pyarkovchain
+![pyarkovchain logo](/pyarkovchain.png)
+
 Pyarkovchain is module for creating generic markov chains in python 3. It has 2 main classes: `ExampleData` and `MChain`. `ExampleData` helps you acess pre-fetched data, and `MChain` is the real markov chain. [Here](https://en.wikipedia.org/wiki/Markov_chain) is how a markov chain works. 
 
 ``` python
